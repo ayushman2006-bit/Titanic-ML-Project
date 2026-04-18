@@ -41,5 +41,13 @@ Tools & Libraries:
 -> Pandas, NumPy
 -> Seaborn, Matplotlib
 -> Scikit-learn
+Challenges Faced:
+
+-> Faced data leakage issue due to presence of 'alive' column, which directly indicated survival outcome. Fixed by removing the column.
+-> Encountered errors with categorical data encoding (string to float conversion). Solved using one-hot encoding (pd.get_dummies).
+-> Got unrealistic 100% accuracy initially due to improper preprocessing and leakage.
+-> Handled missing values in 'age' and 'embarked' columns using mean and mode.
+-> Faced KeyError due to dataset mismatch and resolved by checking column names before operations.
+-> Learned importance of proper train-test split to avoid overfitting.
 
 If you like this project, consider giving it a star!
