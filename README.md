@@ -1,32 +1,57 @@
-# Titanic Survival Prediction 🚢
+# Titanic Survival Prediction 
 
-## Project Overview
-Machine Learning project predicting Titanic survival using Logistic Regression and Random Forest with feature engineering.
+A machine learning project that predicts passenger survival on the Titanic using multiple models, with a focus on feature engineering, model comparison, and evaluation using real-world metrics.
+
+Goal: Identify the most reliable model and understand key factors influencing survival.
 
 ## Dataset
-- Titanic dataset (cleaned version)
-- Contains passenger details like age, class, gender, etc.
+- Source: Kaggle Titanic Dataset
+- Features include: age, sex, passenger class, fare, family relations, etc.
+- Target variable: `survived` (0 = No, 1 = Yes)
 
-## Steps Performed
-- Data Cleaning (handling missing values)
-- Feature Engineering (family size, is_alone)
-- Encoding categorical variables
-- Train-test split
-- Model training and comparison
+## Workflow
+1. Data Cleaning
+   - Removed redundant column (`alive`) to prevent data leakage
+   - Handled missing values (mean for age, mode for embarked)
+
+2. Feature Engineering
+   - Created `family_size`
+   - Created `is_alone` feature
+
+3. Data Preprocessing
+   - One-hot encoding for categorical variables
+   - Feature-target split
+
+4. Model Training
+   - Logistic Regression (baseline model)
+   - Random Forest (ensemble model)
+
+5. Model Evaluation
+   - Compared models using multiple performance metrics
 
 ## Models Used
 - Logistic Regression
 - Random Forest Classifier
 
-## Results
-- Accuracy: ~81–83%
-- Balanced performance across classes
+## Results & Model Comparison
+
+| Model                | Accuracy | F1 Score | ROC-AUC |
+|---------------------|----------|----------|--------|
+| Logistic Regression | ~80%     | ~0.78    | ~0.84  |
+| Random Forest       | ~83%     | ~0.81    | ~0.87  |
+  Best Model: Random Forest (based on ROC-AUC)
 
 ## Evaluation Metrics
 - Confusion Matrix
 - Classification Report (Precision, Recall, F1-score)
 - ROC Curve
-
+- 
+## Visualizations
+- Confusion Matrix
+- ROC Curve
+- Feature Importance Plot
+- Survival Count Plot
+- 
 ## Key Insights
 - Gender and passenger class are strong predictors
 - Family size impacts survival probability
@@ -49,6 +74,13 @@ Machine Learning project predicting Titanic survival using Logistic Regression a
 - Handled missing values in 'age' and 'embarked'
 - Faced KeyError due to dataset mismatch → fixed by checking columns
 - Learned importance of proper train-test split
+
+## Why This Project Matters
+This project demonstrates real-world machine learning workflow:
+- Identifying and fixing data leakage
+- Building meaningful features
+- Comparing models using multiple evaluation metrics
+- Interpreting model behavior instead of just reporting accuracy
 
 ##  What I Learned
 - Importance of avoiding data leakage
